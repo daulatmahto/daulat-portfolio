@@ -312,7 +312,7 @@ nav ul li a {font-size: 18px;}
 
 /* about-me */
 .global-heading h3 span{color: #16ff00;}
-.dot {width: 15px;height: 15px;background-color: red;border-radius: 50%;position: absolute;top: 33px;left: -35px;z-index: 1;}
+.dot {width: 15px;height: 15px;background-color: red;border-radius: 50%;position: absolute;top: 32px;left: -34px;z-index: 1;}
 .pulse {animation: pulse-animation 1.2s infinite;}
 .about-content-left{width: 60%;}
 .about-content-left .global-heading{text-align: left;}
@@ -320,7 +320,7 @@ nav ul li a {font-size: 18px;}
 .about-content-right:before{content: ""; position: absolute; top: 0; left: 2%; width: 5px; height: 100%; background-color: #16ff00; z-index: 0;}
 .timeline-item{position: relative; margin-bottom: 30px; }
 .timeline-item:last-child{margin-bottom: 0;}
-.timeline-item:before{content: ""; position: absolute; top: 50%; left: -34px; height: 13px; width: 13px; background-color: #16ff00; z-index: 1; border-radius: 50%; }
+.timeline-item:before{content: ""; position: absolute; top: 50%; left: -33px; height: 13px; width: 13px; background-color: #16ff00; z-index: 1; border-radius: 50%; }
 .timeline-item p{margin-bottom: 0;}
 .timeline-item span{font-size: 14px; color: #CCCCCC;}
 
