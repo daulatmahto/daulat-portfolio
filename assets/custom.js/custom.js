@@ -45,9 +45,10 @@ $("body").on("click", function (event) {
 // Form Validation
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("contactForm");
+  const successMessage = document.getElementById("successMessage");
 
   form.addEventListener("submit", function (e) {
-    e.preventDefault(); // Stop form from submitting
+    e.preventDefault(); // Stop form from submitting immediately
     validateForm();
   });
 
@@ -112,13 +113,34 @@ document.addEventListener("DOMContentLoaded", function () {
       showSuccess(message);
     }
 
-    // If everything is valid
+    // ✅ If everything is valid, send form to Formspree
     if (isValid) {
-      alert("✅ Message sent successfully!");
-      form.reset();
-      document.querySelectorAll(".form-control").forEach(input => {
-        input.classList.remove("success");
-      });
+      successMessage.textContent = "⏳ Sending your message...";
+      successMessage.style.color = "orange";
+
+      // Send form data to Formspree
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      })
+        .then(response => {
+          if (response.ok) {
+            successMessage.textContent = "✅ Message sent successfully!";
+            successMessage.style.color = "limegreen";
+            form.reset();
+            document.querySelectorAll(".form-control").forEach(input => {
+              input.classList.remove("success");
+            });
+          } else {
+            successMessage.textContent = "❌ Something went wrong. Please try again.";
+            successMessage.style.color = "red";
+          }
+        })
+        .catch(() => {
+          successMessage.textContent = "❌ Network error. Please try again.";
+          successMessage.style.color = "red";
+        });
     }
   }
 
