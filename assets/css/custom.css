@@ -322,7 +322,7 @@ nav ul li a {font-size: 18px;}
 .timeline-item:last-child{margin-bottom: 0;}
 .timeline-item:before{content: ""; position: absolute; top: 50%; left: -33px; height: 13px; width: 13px; background-color: #16ff00; z-index: 1; border-radius: 50%; }
 .timeline-item p{margin-bottom: 0;}
-.timeline-item span{font-size: 14px; color: #CCCCCC;}
+.timeline-item span{font-size: 14px; color: #CCCCCC; display: block; margin-top: 12px;}
 
 
 @media(max-width:1199px){
